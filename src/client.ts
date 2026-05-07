@@ -134,7 +134,7 @@ export class FaturaClient {
     async createDraftInvoice(token: string, invoiceDetails: InvoiceDetails): Promise<DraftInvoice> {
         const faturaUuid = invoiceDetails.uuid ?? generateUUID();
         const invoiceData: Record<string, unknown> = {
-            faturaUuid,
+            ettn: faturaUuid,
             belgeNumarasi: invoiceDetails.documentNumber ?? "",
             faturaTarihi: invoiceDetails.date,
             saat: invoiceDetails.time,
